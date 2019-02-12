@@ -1,0 +1,17 @@
+<div class="article-title">
+  <h1> <%= @article.title %></h1>
+  <div class="button">
+    <div>
+      <%=  link_to "<i class='fas fa-pencil-alt'></i>".html_safe, edit_article_path(@article.id)%>
+    </div>
+    <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, article_path(@article),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+  </div>
+</div>
+
+<img src="https://picsum.photos/500/300/?random" alt="">
+<p><%= @article.content %></p>
+
+<%= link_to "Retour aux articles", articles_path %>
